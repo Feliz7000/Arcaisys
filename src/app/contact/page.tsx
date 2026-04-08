@@ -9,14 +9,38 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate backend
-    setTimeout(() => {
-      setLoading(false);
+    setSuccess(false);
+
+    try {
+      const target = e.target as HTMLFormElement;
+      const name = (target.elements.namedItem('name') as HTMLInputElement).value;
+      const email = (target.elements.namedItem('email') as HTMLInputElement).value;
+      const company = (target.elements.namedItem('company') as HTMLInputElement).value;
+      const message = (target.elements.namedItem('msg') as HTMLTextAreaElement).value;
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, company, message }),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setSuccess(true);
-    }, 1500);
+      target.reset();
+    } catch (error) {
+      console.error(error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -78,7 +102,7 @@ export default function Contact() {
           <div className="glass-panel p-8 rounded-3xl h-full flex flex-col justify-center gap-8">
             <div>
               <h3 className="text-white font-bold mb-2 flex items-center gap-2"><Mail className="w-5 h-5 text-[#a855f7]" /> Email</h3>
-              <p className="text-[#71717a]">hello@arcaisys.com</p>
+              <p className="text-[#71717a]">contact@arcaisys.com</p>
             </div>
             <div>
               <h3 className="text-white font-bold mb-2 flex items-center gap-2"><MapPin className="w-5 h-5 text-[#a855f7]" /> HQ Location</h3>
