@@ -55,9 +55,9 @@ export function HowItWorks() {
               transition={{ delay: i * 0.2 }}
               className="relative flex-1 flex flex-col items-center text-center group"
             >
-              <div className="w-32 h-32 rounded-full bg-[#0a0a0a] border border-[#27272a] flex items-center justify-center relative mb-8 z-10 group-hover:border-[#7c3aed] transition-colors duration-500 shadow-xl">
+              <div className="w-32 h-32 rounded-full bg-[#0a0a0a] border border-[#27272a] flex items-center justify-center relative mb-8 z-10 group-hover:border-[#7c3aed] transition-colors duration-500 shadow-xl overflow-hidden">
                 <div className="absolute inset-0 rounded-full bg-[#7c3aed]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <span className="absolute top-2 left-6 text-5xl font-black text-white/5">{step.num}</span>
+                <span className="absolute inset-0 flex items-center justify-center text-[5rem] font-black text-white/5 select-none -translate-y-2">{step.num}</span>
                 <step.icon className="w-10 h-10 text-[#a855f7] relative z-10" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
