@@ -37,10 +37,10 @@ export default function Features() {
       <div className="space-y-32">
         {featureBreakdown.map((feat, i) => (
           <div key={i} className={`flex flex-col md:flex-row items-center gap-16 ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: i % 2 !== 0 ? 50 : -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ md: 100, once: true }}
+              viewport={{ once: true }}
               className="flex-1"
             >
               <div className="w-16 h-16 rounded-2xl bg-[#7c3aed]/10 flex items-center justify-center mb-6">
@@ -49,17 +49,17 @@ export default function Features() {
               <h2 className="text-4xl font-bold tracking-tight text-white mb-6">{feat.title}</h2>
               <p className="text-lg text-[#71717a] leading-relaxed">{feat.desc}</p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               className="flex-1 relative"
             >
               <div className="absolute inset-0 bg-[#7c3aed]/20 blur-[100px] rounded-full pointer-events-none" />
-              <img 
-                src={feat.mock} 
-                alt={feat.title} 
+              <img
+                src={feat.mock}
+                alt={feat.title}
                 className="relative z-10 w-full rounded-2xl border border-[rgba(255,255,255,0.1)] shadow-2xl"
               />
             </motion.div>
