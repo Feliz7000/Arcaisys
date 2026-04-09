@@ -38,7 +38,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="py-20 px-6 container mx-auto">
+    <section className="relative z-20 pb-20 pt-0 px-6 container mx-auto bg-[#0a0a0a]">
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}

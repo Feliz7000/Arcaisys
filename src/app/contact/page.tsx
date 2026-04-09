@@ -48,14 +48,14 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16">
         {/* Left Side: Form */}
         <div className="flex-1">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4"
           >
             Get in touch
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -69,12 +69,12 @@ export default function Contact() {
               <input type="text" required id="name" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#7c3aed] transition-colors" placeholder="Name" />
               <label htmlFor="name" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#7c3aed] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#7c3aed]">Name</label>
             </div>
-            
+
             <div className="relative group">
               <input type="email" required id="email" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#7c3aed] transition-colors" placeholder="Email" />
               <label htmlFor="email" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#7c3aed] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#7c3aed]">Email</label>
             </div>
-            
+
             <div className="relative group">
               <input type="text" required id="company" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#7c3aed] transition-colors" placeholder="Company" />
               <label htmlFor="company" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#7c3aed] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#7c3aed]">Company</label>
@@ -106,7 +106,7 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-white font-bold mb-2 flex items-center gap-2"><MapPin className="w-5 h-5 text-[#a855f7]" /> HQ Location</h3>
-              <p className="text-[#71717a]">1 Market St. Ste 300<br/>San Francisco, CA 94105</p>
+              <p className="text-[#71717a]">Village Road,<br />Mumbai, Maharashtra, India</p>
             </div>
             <div className="pt-4 border-t border-white/10">
               <h3 className="text-white font-bold mb-4">Or book a meeting directly</h3>

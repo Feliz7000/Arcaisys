@@ -135,7 +135,7 @@ export function IntelligenceGrid() {
       const interactable = !isMobile && !prefersReducedMotion;
 
       const originX = width / 2;
-      const originY = height * 0.85;
+      const originY = height; // Anchor at the very bottom edge
 
       // Draw lines and nodes
       const lines = linesRef.current;
@@ -264,9 +264,9 @@ export function IntelligenceGrid() {
       ref={containerRef}
       className="relative w-full h-[600px] bg-[#0a0a0a] overflow-hidden"
       style={{
-        background: "radial-gradient(circle at 50% 85%, rgba(124, 58, 237, 0.15) 0%, rgba(10, 10, 10, 1) 50%)",
-        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
-        maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)"
+        background: "radial-gradient(circle at 50% 100%, rgba(124, 58, 237, 0.15) 0%, rgba(10, 10, 10, 1) 60%)",
+        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 100%)",
+        maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 100%)"
       }}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}

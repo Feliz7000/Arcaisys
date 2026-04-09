@@ -2,18 +2,24 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { InteractiveGlobe } from "@/components/ui/InteractiveGlobe";
 
 export function HeroSection() {
 
-  const headline = "Automate Everything. Scale Infinitely.";
+  const headline = "Arcaisys";
   const words = headline.split(" ");
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
 
 
-      {/* Floating abstract orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7c3aed]/20 rounded-full blur-[120px] pointer-events-none z-0 mix-blend-screen" />
+      {/* Interactive WebGL Globe */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-90 flex items-center justify-center">
+        <InteractiveGlobe />
+      </div>
+
+      {/* Base glow to ground the globe */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#7c3aed]/10 rounded-full blur-[120px] pointer-events-none z-0 mix-blend-screen" />
 
       <div className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center">
         <motion.div
