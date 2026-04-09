@@ -6,19 +6,19 @@ import { Link2, Sparkles, CheckCircle2 } from "lucide-react";
 export function HowItWorks() {
   const steps = [
     {
-      num: "01",
+      // num: "01",
       title: "Connect your tools",
       desc: "Link your favorite apps in seconds. No code required.",
       icon: Link2,
     },
     {
-      num: "02",
+      // num: "02",
       title: "Define your workflow",
       desc: "Just write what you want to happen in plain English.",
       icon: Sparkles,
     },
     {
-      num: "03",
+      // num: "03",
       title: "Let Arcaisys run it",
       desc: "Our AI handles the rest, 24/7 without complaints.",
       icon: CheckCircle2,
@@ -28,10 +28,10 @@ export function HowItWorks() {
   return (
     <section className="py-32 bg-[#0a0a0a] relative overflow-hidden">
       <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-[#7c3aed]/20 to-transparent" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-24">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

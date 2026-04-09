@@ -34,6 +34,10 @@ body {
   overflow-x: hidden;
 }
 
+* {
+  cursor: none !important;
+}
+
 /* Glassmorphism Utilities */
 @utility glass {
   background: var(--color-glass);

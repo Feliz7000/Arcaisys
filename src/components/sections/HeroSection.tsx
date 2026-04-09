@@ -1,98 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { type Container, type ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
-  const [init, setInit] = useState(false);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const options: ISourceOptions = useMemo(
-    () => ({
-      background: {
-        color: {
-          value: "transparent",
-        },
-      },
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
-        },
-        modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4,
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: "#7c3aed",
-        },
-        links: {
-          color: "#a855f7",
-          distance: 150,
-          enable: true,
-          opacity: 0.2,
-          width: 1,
-        },
-        move: {
-          direction: MoveDirection.none,
-          enable: true,
-          outModes: {
-            default: OutMode.bounce,
-          },
-          random: false,
-          speed: 1,
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 60,
-        },
-        opacity: {
-          value: 0.3,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 3 },
-        },
-      },
-      detectRetina: true,
-    }),
-    [],
-  );
 
   const headline = "Automate Everything. Scale Infinitely.";
   const words = headline.split(" ");
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
-      {/* Particles Background */}
-      {init && (
-        <div className="absolute inset-0 z-0">
-          <Particles id="tsparticles" options={options} />
-        </div>
-      )}
+
 
       {/* Floating abstract orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7c3aed]/20 rounded-full blur-[120px] pointer-events-none z-0 mix-blend-screen" />
@@ -140,13 +58,13 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <Button size="lg" className="relative overflow-hidden group">
+          {/* <Button size="lg" className="relative overflow-hidden group">
             <span className="relative z-10">Start Free Trial</span>
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-          </Button>
-          <Button size="lg" variant="outline">
+          </Button> */}
+          {/* <Button size="lg" variant="outline">
             Watch Demo
-          </Button>
+          </Button> */}
         </motion.div>
       </div>
 
