@@ -54,7 +54,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg md:text-xl text-[#71717a] max-w-2xl mb-12"
         >
-          Archsis AI builds advanced hardware and software systems to solve complex challenges across defence, industry, and everyday life — turning ideas into scalable, real-world solutions.
+          Arcaisys builds advanced hardware and software systems to solve complex challenges across defence, industry, and everyday life — turning ideas into scalable, real-world solutions.
         </motion.p>
 
         <motion.div
