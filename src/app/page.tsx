@@ -6,6 +6,7 @@ import { StatsSection } from "@/components/sections/StatsSection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { IntelligenceGrid } from "@/components/sections/IntelligenceGrid";
 import { CTABanner } from "@/components/sections/CTABanner";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <StatsSection />
       <Testimonials />
       <CTABanner />
+      <ContactSection />
     </>
   );
 }

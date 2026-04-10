@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const companies = [
-  "Acme Corp", "Quantum", "Nexus", "Starlight", "Horizon", "Ascend", "Pinnacle"
+  "CDAC", "DRDO", "Deepak Technic", "CDAC", "DRDO", "Deepak Technic"
 ];
 
 export function SocialProof() {

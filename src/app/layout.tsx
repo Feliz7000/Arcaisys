@@ -67,10 +67,10 @@ export default function RootLayout({
               <span>— © 2025 All rights reserved.</span>
             </div>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Product</a>
+              {/* <a href="#" className="hover:text-white transition-colors">Product</a> */}
               <a href="#" className="hover:text-white transition-colors">Company</a>
-              <a href="#" className="hover:text-white transition-colors">Legal</a>
-              <a href="#" className="hover:text-white transition-colors">Social</a>
+              {/* <a href="#" className="hover:text-white transition-colors">Legal</a> */}
+              {/* <a href="#" className="hover:text-white transition-colors">Social</a> */}
             </div>
           </div>
         </footer>

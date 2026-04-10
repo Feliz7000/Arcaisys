@@ -6,19 +6,19 @@ import { Link2, Sparkles, CheckCircle2 } from "lucide-react";
 export function HowItWorks() {
   const steps = [
     {
-      num: "01",
+      num: "",
       title: "Understand the Problem",
       desc: "We analyze challenges across industries to identify real-world needs.",
       icon: Link2,
     },
     {
-      num: "02",
+      num: "",
       title: "Design the Solution",
       desc: "We combine AI, hardware, and software to create innovative systems.",
       icon: Sparkles,
     },
     {
-      num: "03",
+      num: "",
       title: "Build & Deploy",
       desc: "We develop and deploy scalable solutions ready for real-world impact.",
       icon: CheckCircle2,
