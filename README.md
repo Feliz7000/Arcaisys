@@ -32,6 +32,21 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Ensure the `vercel.json` file is pushed so standard security headers and routing options are applied.
 
+## Contact Email Automation
+
+The contact form saves submissions to Supabase and can also send email notifications.
+
+Set these environment variables in `web/.env.local` (and in Vercel project env vars):
+
+- `SMTP_HOST` - SMTP server host (for Hostinger mail this is commonly `smtp.hostinger.com`)
+- `SMTP_PORT` - SMTP port (typically `587` or `465`)
+- `SMTP_USER` - SMTP username
+- `SMTP_PASS` - SMTP password
+- `CONTACT_NOTIFY_FROM` - sender address (optional, defaults to `SMTP_USER`)
+- `CONTACT_NOTIFY_TO` - comma-separated recipients, e.g. `a@domain.com,b@domain.com`
+
+If SMTP variables are missing, contact submissions are still stored in Supabase and email notifications are skipped.
+
 ## Architecture & Code Structure
 - `/app` - Pages and Routing logic (App Router)
 - `/components/ui` - Primitive components (Button, Badge, Card)

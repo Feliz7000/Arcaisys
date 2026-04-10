@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { sendContactNotification } from '@/lib/mailer';
 
 export async function POST(request: Request) {
   try {
@@ -26,6 +27,13 @@ export async function POST(request: Request) {
         { error: 'Failed to save message to database.' },
         { status: 500 }
       );
+    }
+
+    try {
+      await sendContactNotification({ name, email, company, message });
+    } catch (mailError) {
+      // Keep contact capture resilient even if SMTP is temporarily unavailable.
+      console.error('Mail notification error:', mailError);
     }
 
     return NextResponse.json({ success: true, data }, { status: 200 });
