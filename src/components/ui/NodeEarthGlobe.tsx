@@ -171,7 +171,8 @@ function GlobeScene({ mobile, reducedMotion }: { mobile: boolean; reducedMotion:
             roughness={0.95}
             metalness={0}
             transparent
-            opacity={0.22}
+            opacity={0.08}
+            depthWrite={false}
           />
         </mesh>
 
@@ -194,6 +195,7 @@ function GlobeScene({ mobile, reducedMotion }: { mobile: boolean; reducedMotion:
             opacity={1}
             blending={THREE.AdditiveBlending}
             depthWrite={false}
+            depthTest={false}
           />
         </points>
 
