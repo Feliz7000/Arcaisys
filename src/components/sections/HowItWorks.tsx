@@ -7,20 +7,20 @@ export function HowItWorks() {
   const steps = [
     {
       num: "01",
-      title: "Connect your tools",
-      desc: "Link your favorite apps in seconds. No code required.",
+      title: "Understand the Problem",
+      desc: "We analyze challenges across industries to identify real-world needs.",
       icon: Link2,
     },
     {
       num: "02",
-      title: "Define your workflow",
-      desc: "Just write what you want to happen in plain English.",
+      title: "Design the Solution",
+      desc: "We combine AI, hardware, and software to create innovative systems.",
       icon: Sparkles,
     },
     {
       num: "03",
-      title: "Let Arcaisys run it",
-      desc: "Our AI handles the rest, 24/7 without complaints.",
+      title: "Build & Deploy",
+      desc: "We develop and deploy scalable solutions ready for real-world impact.",
       icon: CheckCircle2,
     },
   ];
@@ -37,9 +37,9 @@ export function HowItWorks() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4"
           >
-            How it works
+            How We Work
           </motion.h2>
-          <p className="text-[#71717a] max-w-2xl mx-auto">Three simple steps to automate your entire business operations.</p>
+          <p className="text-[#71717a] max-w-2xl mx-auto">A simple process to turn complex problems into intelligent solutions.</p>
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-start gap-12 md:gap-6 lg:gap-12 relative">

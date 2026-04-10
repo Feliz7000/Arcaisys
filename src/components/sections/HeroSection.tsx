@@ -31,7 +31,7 @@ export function HeroSection() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B00] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B00]"></span>
           </span>
-          AI-Powered Workflow Automation
+          AI • Hardware • Intelligent Systems
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 max-w-4xl text-white">
@@ -54,7 +54,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg md:text-xl text-[#71717a] max-w-2xl mb-12"
         >
-          Arcaisys uses cutting-edge AI to eliminate repetitive workflows, so your team can focus on what actually matters.
+          Archsis AI builds advanced hardware and software systems to solve complex challenges across defence, industry, and everyday life — turning ideas into scalable, real-world solutions.
         </motion.p>
 
         <motion.div

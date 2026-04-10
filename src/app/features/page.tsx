@@ -1,27 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { Bot, Layers, Zap } from "lucide-react";
+import { Bot, Cpu, Globe2, Layers, Zap } from "lucide-react";
 
 const featureBreakdown = [
   {
-    title: "AI Automation Agent",
-    desc: "Our core engine isn't just a static ruleset. It's a deep learning model that understands context, identifies edge cases, and intelligently repairs broken automation paths.",
+    title: "Intelligent AI Systems",
+    desc: "We design AI systems that understand context, adapt to changing environments, and make intelligent decisions across real-world applications — from automation to advanced analytics.",
     icon: Bot,
-    mock: "https://placehold.co/600x400/222/FF6B00?text=AI+Agent+Interface",
+    previewTitle: "AI Agent Interface",
+    previewLines: ["Context understanding enabled", "Adaptive policy active", "Decision flow aligned"],
   },
   {
-    title: "Infinite Scalability",
-    desc: "Run 10 workflows or 10 million. Built on a serverless event-driven architecture, Arcaisys ensures 99.9% uptime with latency measured in milliseconds.",
+    title: "Scalable System Architecture",
+    desc: "Our solutions are built to scale — from small prototypes to large deployments — ensuring performance, reliability, and efficiency across different use cases.",
     icon: Layers,
-    mock: "https://placehold.co/600x400/222/E63000?text=Scalability+Graph",
+    previewTitle: "Scalability Graph",
+    previewLines: ["Load balancing ready", "Elastic orchestration active", "Architecture synchronized"],
   },
   {
-    title: "Real-time Magic",
-    desc: "Witness your workflows executing live. Debug with our step-by-step trace viewer, and optimize performance before it becomes a bottleneck.",
+    title: "Real-Time Processing",
+    desc: "Process and analyze live data from sensors, devices, and platforms to enable fast, accurate, and actionable decision-making.",
     icon: Zap,
-    mock: "https://placehold.co/600x400/222/555?text=Live+Trace+Logs",
+    previewTitle: "Live Trace Logs",
+    previewLines: ["Telemetry stream synced", "Continuous processing active", "Action routing ready"],
+  },
+  {
+    title: "Hardware + Software Integration",
+    desc: "We bridge the gap between physical systems and intelligent software — integrating sensors, embedded systems, and AI to create complete end-to-end solutions.",
+    icon: Cpu,
+    previewTitle: "Embedded System Link",
+    previewLines: ["Sensor bus connected", "Firmware + AI sync", "Edge node: operational"],
+  },
+  {
+    title: "Multi-Domain Applications",
+    desc: "Our solutions are designed to work across industries including defence, healthcare, smart cities, industrial automation, and consumer technology.",
+    icon: Globe2,
+    previewTitle: "Domain Deployment Matrix",
+    previewLines: ["Defence deployment active", "Industrial deployment active", "Consumer deployment active"],
   }
 ];
 
@@ -29,9 +45,9 @@ export default function Features() {
   return (
     <div className="container mx-auto px-6 py-32 overflow-hidden">
       <div className="text-center mb-24">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">Explore the Platform</h1>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">Explore Our Capabilities</h1>
         <p className="text-xl text-[#71717a] max-w-2xl mx-auto">
-          Deep dive into the architecture and capabilities that make Arcaisys the leading automation platform.
+          Discover how Arcaisys combines artificial intelligence, hardware systems, and real-world engineering to build scalable solutions across industries.
         </p>
       </div>
 
@@ -58,13 +74,17 @@ export default function Features() {
               className="flex-1 relative"
             >
               <div className="absolute inset-0 bg-[#FF6B00]/20 blur-[100px] rounded-full pointer-events-none" />
-              <Image
-                src={feat.mock}
-                alt={feat.title}
-                width={600}
-                height={400}
-                className="relative z-10 w-full rounded-2xl border border-[rgba(255,255,255,0.1)] shadow-2xl"
-              />
+              <div className="relative z-10 w-full rounded-2xl border border-[rgba(255,255,255,0.1)] shadow-2xl bg-[linear-gradient(160deg,rgba(255,107,0,0.14),rgba(10,10,10,0.92)_45%,rgba(230,48,0,0.12))] p-8 md:p-10 min-h-[260px] flex flex-col justify-center">
+                <div className="text-white text-xl md:text-2xl font-bold tracking-tight mb-5">{feat.previewTitle}</div>
+                <div className="space-y-3">
+                  {feat.previewLines.map((line, lineIndex) => (
+                    <div key={lineIndex} className="flex items-center gap-3 text-[#b4b4bc] text-sm md:text-base">
+                      <span className="w-2 h-2 rounded-full bg-[#FF6B00]" />
+                      <span>{line}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
         ))}

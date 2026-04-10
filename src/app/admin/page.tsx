@@ -22,7 +22,7 @@ export default async function AdminDashboard() {
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 text-xl font-bold">
             <LayoutDashboard className="w-5 h-5 text-[#E63000]" />
-            Arcaisys <span className="text-[#71717a] font-normal">Workspace</span>
+            Engineering Intelligent Solutions for Real-World Problems <span className="text-[#71717a] font-normal">Workspace</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm font-medium text-[#71717a] hidden sm:block">

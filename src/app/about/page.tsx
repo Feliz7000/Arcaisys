@@ -24,7 +24,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6"
           >
-            We believe in working smarter, not harder.
+            Building Intelligent Systems <br></br>for a Smarter World
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -32,42 +32,40 @@ export default function About() {
             transition={{ delay: 0.1 }}
             className="text-xl text-[#71717a] leading-relaxed"
           >
-            Arcaisys was founded in 2024 with a rebellious spirit and a lofty objective: 
-            to free humans from the tyranny of repetitive, soul-crushing tasks. We build 
-            AI that doesn&apos;t just assist, but completely offloads operations safely and reliably.
+            We do not just build software — we build <br></br> complete systems that interact with the real world.
           </motion.p>
         </section>
 
         {/* Values */}
         <section>
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Core Values</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Core Principles</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="text-center group hover:border-[#FF6B00]/50 transition-colors bg-[#0a0a0a]">
               <div className="w-12 h-12 bg-[#FF6B00]/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                 <Target className="w-6 h-6 text-[#E63000]" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Precision</h3>
-              <p className="text-[#71717a] text-sm">When executing operations, &apos;good enough&apos; isn&apos;t acceptable. We aim for zero defects.</p>
+              <h3 className="text-xl font-bold mb-3">Innovation-Driven</h3>
+              <p className="text-[#71717a] text-sm">We focus on creating new solutions to complex problems through continuous research and experimentation.</p>
             </Card>
             <Card className="text-center group hover:border-[#FF6B00]/50 transition-colors bg-[#0a0a0a]">
               <div className="w-12 h-12 bg-[#FF6B00]/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                 <Users className="w-6 h-6 text-[#E63000]" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Human-centric</h3>
-              <p className="text-[#71717a] text-sm">AI exists to elevate human potential, not to replace the human element.</p>
+              <h3 className="text-xl font-bold mb-3">Real-World Impact</h3>
+              <p className="text-[#71717a] text-sm">Every solution we build is designed to solve practical problems and create meaningful value.</p>
             </Card>
             <Card className="text-center group hover:border-[#FF6B00]/50 transition-colors bg-[#0a0a0a]">
               <div className="w-12 h-12 bg-[#FF6B00]/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                 <Heart className="w-6 h-6 text-[#E63000]" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Transparency</h3>
-              <p className="text-[#71717a] text-sm">Clear decisions. Traceable actions. No black boxes when it comes to automation.</p>
+              <h3 className="text-xl font-bold mb-3">Reliability & Trust</h3>
+              <p className="text-[#71717a] text-sm">Our systems are built to be secure, stable, and dependable in real-world environments.</p>
             </Card>
           </div>
         </section>
 
         {/* Team */}
-        <section>
+        {/* <section>
           <h2 className="text-3xl font-bold text-white mb-12 text-center">The Minds Behind Arcaisys</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((t, i) => (
@@ -93,7 +91,7 @@ export default function About() {
               </motion.div>
             ))}
           </div>
-        </section>
+        </section> */}
 
       </div>
     </div>

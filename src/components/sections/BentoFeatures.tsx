@@ -14,33 +14,33 @@ type FeatureItem = {
 
 const features: FeatureItem[] = [
   {
-    title: "AI Workflow Builder",
-    description: "Drag & drop automation that thinks for itself and repairs broken paths automatically.",
+    title: "Intelligent Systems",
+    description: "AI-powered systems that analyze, learn, and act in dynamic real-world environments.",
     icon: Sparkles,
   },
   {
-    title: "Real-time Analytics",
-    description: "Live performance dashboards. See precisely how much time and money you're saving.",
+    title: "Real-time Insights",
+    description: "Process live data from sensors, devices, and platforms to generate instant decisions.",
     icon: BarChart3,
   },
   {
-    title: "Natural Language Triggers",
-    description: "Describe actions in plain English. Just type 'send a weekly report to the team'.",
+    title: "Human-AI Interaction",
+    description: "Control and interact with systems using natural, intuitive communication.",
     icon: MessageSquare,
   },
   {
-    title: "200+ Integrations",
-    description: "Connect any tool instantly without writing a single line of boilerplate code.",
+    title: "Cross-Industry Integration",
+    description: "Seamlessly connects with hardware, IoT devices, and software platforms across domains.",
     icon: Zap,
   },
   {
-    title: "Enterprise Security",
-    description: "SOC2 Type II certified. Your data is end-to-end encrypted at rest and in transit.",
+    title: "Secure & Reliable Systems",
+    description: "Designed with strong security, stability, and reliability for critical applications.",
     icon: Lock,
   },
   {
-    title: "One-click Deploy",
-    description: "Go live in seconds. Arcaisys handles scaling infrastructure behind the scenes.",
+    title: "Scalable Deployment",
+    description: "From prototype to production — fast, efficient, and scalable solutions.",
     icon: Rocket,
   },
 ];
@@ -55,7 +55,7 @@ export function BentoFeatures() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4"
         >
-          Built for the future of work
+          Built for Real-World Impact
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ export function BentoFeatures() {
           transition={{ delay: 0.1 }}
           className="text-lg text-[#71717a] max-w-2xl mx-auto"
         >
-          Everything you need to orchestrate complex operations, packaged in an interface anyone can use.
+          We design intelligent systems that work across industries — from defence to smart cities, healthcare, and beyond.
         </motion.p>
       </div>
 
