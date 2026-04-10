@@ -102,7 +102,7 @@ export function ContactSection() {
           <div className="glass-panel p-8 rounded-3xl h-full flex flex-col justify-center gap-8">
             <div>
               <h3 className="text-white font-bold mb-2 flex items-center gap-2"><Mail className="w-5 h-5 text-[#E63000]" /> Email</h3>
-              <p className="text-[#71717a]">contact@arcaisys.com</p>
+              <p className="text-[#71717a]">pm.team@Arcaisys.com</p>
             </div>
             <div>
               <h3 className="text-white font-bold mb-2 flex items-center gap-2"><MapPin className="w-5 h-5 text-[#E63000]" /> HQ Location</h3>
