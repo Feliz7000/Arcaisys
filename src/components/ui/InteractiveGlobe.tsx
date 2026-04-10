@@ -51,11 +51,11 @@ export function InteractiveGlobe() {
           { location: [-33.8688, 151.2093], size: 0.05 },
           { location: [19.076,  72.8777],   size: 0.06 }, // Mumbai
         ],
-        onRender: (state) => {
+        onRender: (state: any) => {
           state.phi = phiRef.current;
           phiRef.current += 0.003;
         },
-      });
+      } as any);
     };
 
     // ResizeObserver fires immediately on first observe() call with the real layout size

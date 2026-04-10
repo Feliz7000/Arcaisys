@@ -25,7 +25,7 @@ export function IntelligenceGrid() {
 
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const linesRef = useRef<Line[]>([]);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -241,7 +241,7 @@ export function IntelligenceGrid() {
 
     return () => {
       window.removeEventListener("resize", handleResizeCanvas);
-      if (requestRef.current) cancelAnimationFrame(requestRef.current);
+      if (requestRef.current !== null) cancelAnimationFrame(requestRef.current);
     };
   }, [isVisible, isMobile]);
 

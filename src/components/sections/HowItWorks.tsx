@@ -6,19 +6,19 @@ import { Link2, Sparkles, CheckCircle2 } from "lucide-react";
 export function HowItWorks() {
   const steps = [
     {
-      // num: "01",
+      num: "01",
       title: "Connect your tools",
       desc: "Link your favorite apps in seconds. No code required.",
       icon: Link2,
     },
     {
-      // num: "02",
+      num: "02",
       title: "Define your workflow",
       desc: "Just write what you want to happen in plain English.",
       icon: Sparkles,
     },
     {
-      // num: "03",
+      num: "03",
       title: "Let Arcaisys run it",
       desc: "Our AI handles the rest, 24/7 without complaints.",
       icon: CheckCircle2,
