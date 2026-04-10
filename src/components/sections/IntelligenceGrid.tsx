@@ -185,8 +185,8 @@ export function IntelligenceGrid() {
 
         // Draw Line
         const grad = ctx.createLinearGradient(originX, originY, tipX, tipY);
-        grad.addColorStop(0, "rgba(124, 58, 237, 0.6)");
-        grad.addColorStop(1, `rgba(168, 85, 247, ${line.currentOpacity})`);
+        grad.addColorStop(0, "rgba(255, 107, 0, 0.28)");
+        grad.addColorStop(1, `rgba(230, 48, 0, ${line.currentOpacity})`);
 
         ctx.beginPath();
         ctx.moveTo(originX, originY);
@@ -198,10 +198,10 @@ export function IntelligenceGrid() {
         // Draw Node Dot
         ctx.beginPath();
         ctx.arc(tipX, tipY, line.currentRadius, 0, Math.PI * 2);
-        const nodeBaseOpacity = isTipHovered ? 1.0 : 0.6; // Base opacity when not hovered
-        ctx.fillStyle = `rgba(168, 85, 247, ${nodeBaseOpacity})`;
+        const nodeBaseOpacity = isTipHovered ? 0.9 : 0.35; // Keep background nodes subtle
+        ctx.fillStyle = `rgba(230, 48, 0, ${nodeBaseOpacity})`;
         ctx.shadowBlur = isTipHovered ? 12 : 6;
-        ctx.shadowColor = "#a855f7";
+        ctx.shadowColor = "#E63000";
         ctx.fill();
 
         // Reset shadow for next line/dot to avoid bleed
@@ -211,9 +211,9 @@ export function IntelligenceGrid() {
       // Draw Origin Point
       ctx.beginPath();
       ctx.arc(originX, originY, 4, 0, Math.PI * 2);
-      ctx.fillStyle = "#7c3aed";
+      ctx.fillStyle = "#FF6B00";
       ctx.shadowBlur = 20;
-      ctx.shadowColor = "#7c3aed";
+      ctx.shadowColor = "#FF6B00";
       ctx.fill();
       ctx.shadowBlur = 0;
 
@@ -221,9 +221,9 @@ export function IntelligenceGrid() {
       if (interactable && isHovering) {
         ctx.beginPath();
         ctx.arc(mouseX, mouseY, 4, 0, Math.PI * 2);
-        ctx.fillStyle = "#a855f7";
+        ctx.fillStyle = "#E63000";
         ctx.shadowBlur = 15;
-        ctx.shadowColor = "#a855f7";
+        ctx.shadowColor = "#E63000";
         ctx.fill();
         ctx.shadowBlur = 0;
       }
@@ -264,7 +264,7 @@ export function IntelligenceGrid() {
       ref={containerRef}
       className="relative w-full h-[600px] bg-[#0a0a0a] overflow-hidden"
       style={{
-        background: "radial-gradient(circle at 50% 100%, rgba(124, 58, 237, 0.15) 0%, rgba(10, 10, 10, 1) 60%)",
+        background: "radial-gradient(circle at 50% 100%, rgba(255, 107, 0, 0.15) 0%, rgba(10, 10, 10, 1) 60%)",
         WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 100%)",
         maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 100%)"
       }}

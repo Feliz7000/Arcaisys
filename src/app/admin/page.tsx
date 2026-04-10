@@ -21,7 +21,7 @@ export default async function AdminDashboard() {
       <nav className="border-b border-[rgba(255,255,255,0.06)] bg-[#0a0a0a]/80 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 text-xl font-bold">
-            <LayoutDashboard className="w-5 h-5 text-[#a855f7]" />
+            <LayoutDashboard className="w-5 h-5 text-[#E63000]" />
             Arcaisys <span className="text-[#71717a] font-normal">Workspace</span>
           </div>
           <div className="flex items-center gap-4">
@@ -44,7 +44,7 @@ export default async function AdminDashboard() {
       <div className="container mx-auto px-6 py-12 max-w-6xl">
         <header className="mb-10">
           <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-            <Mail className="w-6 h-6 text-[#7c3aed]" />
+            <Mail className="w-6 h-6 text-[#FF6B00]" />
             Incoming Operations
           </h1>
           <p className="text-[#71717a] mt-2">Manage all contact submissions safely from this secure portal.</p>
@@ -61,10 +61,10 @@ export default async function AdminDashboard() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-[rgba(255,255,255,0.02)] border-b border-[rgba(255,255,255,0.06)]">
-                  <th className="px-6 py-4 font-semibold text-sm text-[#a855f7]">Date</th>
-                  <th className="px-6 py-4 font-semibold text-sm text-[#a855f7]">Name</th>
-                  <th className="px-6 py-4 font-semibold text-sm text-[#a855f7]">Company</th>
-                  <th className="px-6 py-4 font-semibold text-sm text-[#a855f7]">Message</th>
+                  <th className="px-6 py-4 font-semibold text-sm text-[#E63000]">Date</th>
+                  <th className="px-6 py-4 font-semibold text-sm text-[#E63000]">Name</th>
+                  <th className="px-6 py-4 font-semibold text-sm text-[#E63000]">Company</th>
+                  <th className="px-6 py-4 font-semibold text-sm text-[#E63000]">Message</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[rgba(255,255,255,0.04)]">

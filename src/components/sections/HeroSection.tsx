@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { InteractiveGlobe } from "@/components/ui/InteractiveGlobe";
+import { NodeEarthGlobe } from "@/components/ui/NodeEarthGlobe";
 
 export function HeroSection() {
 
@@ -13,24 +12,24 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
 
 
-      {/* Interactive WebGL Globe */}
+      {/* Rotating node-earth visual */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-90 flex items-center justify-center">
-        <InteractiveGlobe />
+        <NodeEarthGlobe />
       </div>
 
       {/* Base glow to ground the globe */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#7c3aed]/10 rounded-full blur-[120px] pointer-events-none z-0 mix-blend-screen" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E63000]/15 rounded-full blur-[140px] pointer-events-none z-0 mix-blend-screen" />
 
       <div className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 text-[#a855f7] text-sm font-medium mb-8"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FF6B00]/30 bg-[#FF6B00]/10 text-white text-sm font-medium mb-8"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a855f7] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a855f7]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B00] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B00]"></span>
           </span>
           AI-Powered Workflow Automation
         </motion.div>

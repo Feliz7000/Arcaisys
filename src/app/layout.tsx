@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
 import { GlobalCursor } from "@/components/ui/GlobalCursor";
@@ -31,18 +32,18 @@ export default function RootLayout({
         <BackgroundParticles />
         <header className="fixed top-0 left-0 w-full h-16 border-b border-[rgba(255,255,255,0.06)] bg-[#0a0a0a]/70 backdrop-blur-md z-50 flex items-center justify-between px-6 md:px-12 transition-all duration-300">
           <div className="font-bold text-xl tracking-tight flex items-center gap-2 text-white">
-            <div className="w-6 h-6 rounded-sm bg-gradient-to-tr from-[#7c3aed] to-[#a855f7]" />
+            <div className="w-6 h-6 rounded-sm bg-gradient-to-tr from-[#FF6B00] to-[#E63000]" />
             Arcaisys
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-[#71717a] font-medium">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <a href="/features" className="hover:text-white transition-colors">Features</a>
-            <a href="/about" className="hover:text-white transition-colors">About</a>
-            <a href="/blog" className="hover:text-white transition-colors">Blog</a>
-            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <Link href="/features" className="hover:text-white transition-colors">Features</Link>
+            <Link href="/about" className="hover:text-white transition-colors">About</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
           </nav>
           {/* <div className="hidden md:block">
-            <a href="/contact" className="px-4 py-2 rounded-lg bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm font-medium transition-all shadow-[0_0_15px_rgba(124,58,237,0.4)]">
+            <a href="/contact" className="px-4 py-2 rounded-lg bg-[#FF6B00] hover:bg-[#8B0000] text-white text-sm font-medium transition-all shadow-[0_0_40px_rgba(255,107,0,0.4)]">
               Get Early Access
             </a>
           </div> */}
@@ -53,7 +54,7 @@ export default function RootLayout({
         </main>
 
         <footer className="border-t border-[rgba(255,255,255,0.06)] py-12 px-6 mt-20 relative z-10 bg-[#0a0a0a]">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#7c3aed]/50 to-transparent"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/50 to-transparent"></div>
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#71717a]">
             <div className="flex items-center gap-2">
               <div className="font-bold text-white">Arcaisys</div>

@@ -35,13 +35,13 @@ export function InteractiveGlobe() {
         phi: phiRef.current,
         theta: 0.3,
         dark: 1,
-        diffuse: 2.5,           // Higher diffuse = more even interior lighting so dots show
+        diffuse: 2.5,
         scale: 1,
         mapSamples: 16000,
-        mapBrightness: 12,      // Was 6 — higher = land dots are much brighter / visible
-        baseColor: [0.42, 0.18, 0.95], // Deep purple — contrasts clearly on black background
-        markerColor: [168 / 255, 85 / 255, 247 / 255],
-        glowColor: [0.6, 0.3, 1.0],   // Purple-tinted glow instead of flat white
+        mapBrightness: 12,
+        baseColor: [1.0, 0.42, 0.0],
+        markerColor: [230 / 255, 48 / 255, 0],
+        glowColor: [1.0, 165 / 255, 0],
         markers: [
           { location: [37.7595, -122.4367], size: 0.05 },
           { location: [40.7128, -74.006],   size: 0.05 },

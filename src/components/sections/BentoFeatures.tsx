@@ -2,10 +2,17 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, BarChart3, MessageSquare, Zap, Lock, Rocket } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
 
-const features = [
+type FeatureItem = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+const features: FeatureItem[] = [
   {
     title: "AI Workflow Builder",
     description: "Drag & drop automation that thinks for itself and repairs broken paths automatically.",
@@ -70,7 +77,7 @@ export function BentoFeatures() {
   );
 }
 
-function FeatureCard({ feature, index }: { feature: any, index: number }) {
+function FeatureCard({ feature, index }: { feature: FeatureItem; index: number }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -87,7 +94,7 @@ function FeatureCard({ feature, index }: { feature: any, index: number }) {
       transition={{ delay: index * 0.1 }}
     >
       <Card 
-        className="relative h-full overflow-hidden group cursor-pointer border-[rgba(255,255,255,0.06)] hover:border-[#7c3aed]/50 transition-colors bg-[#0a0a0a]"
+        className="relative h-full overflow-hidden group cursor-pointer border-[rgba(255,255,255,0.06)] hover:border-[#FF6B00]/50 transition-colors bg-[#0a0a0a]"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -97,14 +104,14 @@ function FeatureCard({ feature, index }: { feature: any, index: number }) {
           <div 
             className="pointer-events-none absolute -inset-px rounded-2xl opacity-100 transition duration-300"
             style={{
-              background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(124, 58, 237, 0.15), transparent 40%)`,
+              background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 107, 0, 0.15), transparent 40%)`,
             }}
           />
         )}
         
         <div className="relative z-10 flex flex-col h-full">
-          <div className="w-12 h-12 rounded-lg bg-[#7c3aed]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#7c3aed]/20 transition-all">
-            <feature.icon className="w-6 h-6 text-[#a855f7]" />
+          <div className="w-12 h-12 rounded-lg bg-[#FF6B00]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#FF6B00]/20 transition-all">
+            <feature.icon className="w-6 h-6 text-[#E63000]" />
           </div>
           <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
           <p className="text-[#71717a] leading-relaxed flex-grow">{feature.description}</p>

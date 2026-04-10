@@ -48,7 +48,7 @@ export default function Pricing() {
             onClick={() => setAnnual(!annual)}
           >
             <motion.div 
-              className="w-4 h-4 bg-[#7c3aed] rounded-full"
+              className="w-4 h-4 bg-[#FF6B00] rounded-full"
               animate={{ x: annual ? 24 : 0 }}
             />
           </button>
@@ -70,11 +70,11 @@ export default function Pricing() {
           >
             {plan.popular && (
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                <Badge className="bg-gradient-to-r from-[#7c3aed] to-[#a855f7] border-0">Most Popular</Badge>
+                <Badge className="bg-gradient-to-r from-[#FF6B00] to-[#E63000] border-0">Most Popular</Badge>
               </div>
             )}
-            <Card className={`flex-1 flex flex-col ${plan.popular ? "border-[#7c3aed] shadow-[0_0_30px_rgba(124,58,237,0.15)] bg-[#0a0a0a] relative overflow-hidden" : "bg-[#0a0a0a]/50"}`}>
-              {plan.popular && <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#7c3aed] to-[#a855f7]" />}
+            <Card className={`flex-1 flex flex-col ${plan.popular ? "border-[#FF6B00] shadow-[0_0_40px_rgba(255,107,0,0.4)] bg-[#0a0a0a] relative overflow-hidden" : "bg-[#0a0a0a]/50"}`}>
+              {plan.popular && <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#FF6B00] to-[#E63000]" />}
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
                 <p className="text-[#71717a] text-sm h-10">{plan.desc}</p>
@@ -90,7 +90,7 @@ export default function Pricing() {
               <ul className="space-y-4 mb-8 flex-1">
                 {plan.features.map((f, fi) => (
                   <li key={fi} className="flex flex-start gap-3 text-sm text-white/80">
-                    <Check className="w-5 h-5 text-[#a855f7] shrink-0" /> {f}
+                    <Check className="w-5 h-5 text-[#E63000] shrink-0" /> {f}
                   </li>
                 ))}
               </ul>

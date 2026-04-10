@@ -38,7 +38,7 @@ export function GlobalCursor() {
       style={{ willChange: 'transform' }}
     >
       <div 
-        className={`w-2 h-2 bg-[#a855f7] rounded-full shadow-[0_0_15px_rgba(168,85,247,1)] -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 ease-out ${isHovering ? 'scale-[2.0]' : 'scale-100'}`}
+        className={`w-2 h-2 bg-[#FF6B00] rounded-full shadow-[0_0_40px_rgba(255,107,0,0.4)] -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 ease-out ${isHovering ? 'scale-[2.0]' : 'scale-100'}`}
       />
     </div>
   );

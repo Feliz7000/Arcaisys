@@ -45,7 +45,7 @@ export function StatsSection() {
         viewport={{ once: true }}
         className="glass-panel p-12 md:p-16 rounded-3xl relative overflow-hidden"
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#7c3aed]/10 blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#FF6B00]/10 blur-[100px] pointer-events-none" />
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center relative z-10">
           {stats.map((stat, i) => (

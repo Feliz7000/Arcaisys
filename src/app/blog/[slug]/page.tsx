@@ -1,24 +1,19 @@
 "use client";
 
 import { motion, useScroll } from "framer-motion";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export default function BlogPost() {
   const { scrollYProgress } = useScroll();
   const pathname = usePathname();
   const slug = pathname.split("/").pop();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
 
   return (
     <>
       <motion.div 
-        className="fixed top-16 left-0 right-0 h-1 bg-[#7c3aed] origin-left z-50"
+        className="fixed top-16 left-0 right-0 h-1 bg-[#FF6B00] origin-left z-50"
         style={{ scaleX: scrollYProgress }}
       />
       
@@ -34,7 +29,13 @@ export default function BlogPost() {
             </h1>
             
             <div className="flex items-center gap-4 text-sm">
-              <img src="https://ui-avatars.com/api/?name=Dr+Harkin&background=a855f7&color=fff" alt="Author" className="w-10 h-10 rounded-full" />
+              <Image
+                src="https://ui-avatars.com/api/?name=Dr+Harkin&background=E63000&color=fff"
+                alt="Author"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full"
+              />
               <div>
                 <div className="font-bold text-white">Dr. James Harkin</div>
                 <div className="text-[#71717a]">Oct 12, 2025</div>
@@ -42,15 +43,17 @@ export default function BlogPost() {
             </div>
           </header>
 
-          <img 
-            src={`https://placehold.co/800x400/222/7c3aed?text=Blog+Header+Image`} 
-            alt="Hero" 
+          <Image
+            src="https://placehold.co/800x400/222/FF6B00?text=Blog+Header+Image"
+            alt="Hero"
+            width={800}
+            height={400}
             className="w-full rounded-2xl mb-12 shadow-2xl border border-[rgba(255,255,255,0.06)]"
           />
 
-          <div className="prose prose-invert prose-p:text-[#71717a] prose-p:leading-loose prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-a:text-[#a855f7] max-w-none">
+          <div className="prose prose-invert prose-p:text-[#71717a] prose-p:leading-loose prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-a:text-[#E63000] max-w-none">
             <p>
-              The concept of a "digital worker" has evolved significantly over the past five years. What once meant a series of brittle macros written in python scripts has now metastasized into full-blown deep learning inference models orchestrating across microservices.
+              The concept of a &quot;digital worker&quot; has evolved significantly over the past five years. What once meant a series of brittle macros written in python scripts has now metastasized into full-blown deep learning inference models orchestrating across microservices.
             </p>
             <p>
               In this post, we discuss the core philosophies behind Arcaisys architecture and how we safely contain LLMs while giving them execute permissions via function calling.
@@ -58,7 +61,7 @@ export default function BlogPost() {
 
             <h2>Safeguards and Human-in-the-Loop Architecture</h2>
             <p>
-              When a system can invoke API endpoints or run SQL queries automatically, the cost of hallucination goes from "mild inconvenience" to "catastrophic data loss." That's why we introduced the dual-agent review standard.
+              When a system can invoke API endpoints or run SQL queries automatically, the cost of hallucination goes from &quot;mild inconvenience&quot; to &quot;catastrophic data loss.&quot; That&apos;s why we introduced the dual-agent review standard.
             </p>
 
             <blockquote>
@@ -67,7 +70,7 @@ export default function BlogPost() {
 
             <h2>Conclusion</h2>
             <p>
-              The enterprise of tomorrow won't run on rigid logic gates. It will run on intent. And while that sounds terrifying, with the right safeguards, it represents the biggest leap in operational efficiency since cloud computing.
+              The enterprise of tomorrow won&apos;t run on rigid logic gates. It will run on intent. And while that sounds terrifying, with the right safeguards, it represents the biggest leap in operational efficiency since cloud computing.
             </p>
           </div>
         </article>

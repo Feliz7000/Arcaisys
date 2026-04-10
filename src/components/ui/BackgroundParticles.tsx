@@ -41,13 +41,13 @@ export function BackgroundParticles() {
       },
       particles: {
         color: {
-          value: "#7c3aed",
+          value: "#FF6B00",
         },
         links: {
-          color: "#a855f7",
+          color: "#E63000",
           distance: 180,
           enable: true,
-          opacity: 0.4,
+          opacity: 0.2,
           width: 1,
         },
         move: {
@@ -67,7 +67,7 @@ export function BackgroundParticles() {
           value: 80,
         },
         opacity: {
-          value: 0.6,
+          value: 0.35,
         },
         shape: {
           type: "circle",

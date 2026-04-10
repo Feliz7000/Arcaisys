@@ -66,23 +66,23 @@ export default function Contact() {
 
           <form onSubmit={handleSubmit} className="space-y-6 relative">
             <div className="relative group">
-              <input type="text" required id="name" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#7c3aed] transition-colors" placeholder="Name" />
-              <label htmlFor="name" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#7c3aed] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#7c3aed]">Name</label>
+              <input type="text" required id="name" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#FF6B00] transition-colors" placeholder="Name" />
+              <label htmlFor="name" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#FF6B00] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#FF6B00]">Name</label>
             </div>
 
             <div className="relative group">
-              <input type="email" required id="email" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#7c3aed] transition-colors" placeholder="Email" />
-              <label htmlFor="email" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#7c3aed] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#7c3aed]">Email</label>
+              <input type="email" required id="email" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#FF6B00] transition-colors" placeholder="Email" />
+              <label htmlFor="email" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#FF6B00] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#FF6B00]">Email</label>
             </div>
 
             <div className="relative group">
-              <input type="text" required id="company" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#7c3aed] transition-colors" placeholder="Company" />
-              <label htmlFor="company" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#7c3aed] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#7c3aed]">Company</label>
+              <input type="text" required id="company" className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#FF6B00] transition-colors" placeholder="Company" />
+              <label htmlFor="company" className="absolute left-0 top-3 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#FF6B00] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#FF6B00]">Company</label>
             </div>
 
             <div className="relative group pt-4">
-              <textarea required id="msg" rows={4} className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#7c3aed] transition-colors resize-none" placeholder="Message"></textarea>
-              <label htmlFor="msg" className="absolute left-0 top-7 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-7 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#7c3aed] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#7c3aed]">Message</label>
+              <textarea required id="msg" rows={4} className="peer w-full bg-transparent border-b border-white/10 py-3 text-white placeholder-transparent focus:outline-none focus:border-[#FF6B00] transition-colors resize-none" placeholder="Message"></textarea>
+              <label htmlFor="msg" className="absolute left-0 top-7 text-[#71717a] text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-7 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[#FF6B00] peer-valid:-top-3 peer-valid:text-xs peer-valid:text-[#FF6B00]">Message</label>
             </div>
 
             <Button type="submit" className="w-full mt-8" disabled={loading || success}>
@@ -101,11 +101,11 @@ export default function Contact() {
         <div className="flex-1 lg:pl-16">
           <div className="glass-panel p-8 rounded-3xl h-full flex flex-col justify-center gap-8">
             <div>
-              <h3 className="text-white font-bold mb-2 flex items-center gap-2"><Mail className="w-5 h-5 text-[#a855f7]" /> Email</h3>
+              <h3 className="text-white font-bold mb-2 flex items-center gap-2"><Mail className="w-5 h-5 text-[#E63000]" /> Email</h3>
               <p className="text-[#71717a]">contact@arcaisys.com</p>
             </div>
             <div>
-              <h3 className="text-white font-bold mb-2 flex items-center gap-2"><MapPin className="w-5 h-5 text-[#a855f7]" /> HQ Location</h3>
+              <h3 className="text-white font-bold mb-2 flex items-center gap-2"><MapPin className="w-5 h-5 text-[#E63000]" /> HQ Location</h3>
               <p className="text-[#71717a]">Village Road,<br />Mumbai, Maharashtra, India</p>
             </div>
             <div className="pt-4 border-t border-white/10">
