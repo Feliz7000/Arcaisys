@@ -74,6 +74,8 @@ export function HeroSection() {
         </motion.div>
       </div>
 
+      </div>
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
