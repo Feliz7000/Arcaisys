@@ -253,8 +253,7 @@ export function NodeEarthGlobe() {
 
   return (
     <div
-      className="relative pointer-events-none"
-      style={{ width: "min(860px, 100vw)", height: "min(860px, 100vw)", maxWidth: "860px", maxHeight: "860px" }}
+      className="relative pointer-events-none w-full h-full"
     >
       <Canvas
         dpr={mobile ? [1, 1.15] : [1, 1.7]}
