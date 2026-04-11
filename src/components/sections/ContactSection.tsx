@@ -44,7 +44,7 @@ export function ContactSection() {
   };
 
   return (
-    <section className="container mx-auto px-6 py-32">
+    <section id="contact" className="container mx-auto px-6 py-32 scroll-mt-24">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16">
         <div className="flex-1">
           <motion.h1

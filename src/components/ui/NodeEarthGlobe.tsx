@@ -254,11 +254,11 @@ export function NodeEarthGlobe() {
   return (
     <div
       className="relative pointer-events-none"
-      style={{ width: "min(860px, 92vw)", height: "min(860px, 92vw)", maxWidth: "860px", maxHeight: "860px" }}
+      style={{ width: "min(860px, 100vw)", height: "min(860px, 100vw)", maxWidth: "860px", maxHeight: "860px" }}
     >
       <Canvas
-        dpr={mobile ? [1, 1.2] : [1, 1.7]}
-        camera={{ position: [0, 0, mobile ? 3.95 : 3.45], fov: mobile ? 44 : 38 }}
+        dpr={mobile ? [1, 1.15] : [1, 1.7]}
+        camera={{ position: [0, 0, mobile ? 4.15 : 3.45], fov: mobile ? 46 : 38 }}
         gl={{ antialias: true, alpha: true }}
       >
         <GlobeScene mobile={mobile} reducedMotion={reducedMotion} />

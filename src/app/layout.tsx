@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
 import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
 import { GlobalCursor } from "@/components/ui/GlobalCursor";
@@ -15,6 +15,11 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const orbitron = Orbitron({
+  variable: "--font-orbital",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Arcaisys | AI-Powered Workflow Automation",
   description: "Automate Everything. Scale Infinitely. Arcaisys uses cutting-edge AI to eliminate repetitive workflows.",
@@ -26,13 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`} style={{ colorScheme: "dark" }}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable} ${orbitron.variable} h-full antialiased dark`} style={{ colorScheme: "dark" }}>
       <body suppressHydrationWarning className="min-h-full flex flex-col font-sans noise-bg">
         <GlobalCursor />
         <BackgroundParticles />
         <SiteHeader />
 
-        <main className="flex-grow pt-16 flex flex-col">
+        <main className="flex-grow pt-16 flex flex-col relative z-10">
           {children}
         </main>
 

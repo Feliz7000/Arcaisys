@@ -10,7 +10,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/features", label: "Features" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -26,7 +26,7 @@ export function SiteHeader() {
           onClick={() => setMenuOpen(false)}
         >
           <Image src={logo} alt="Arcaisys logo" width={24} height={24} className="rounded-sm object-contain" priority />
-          <span>Arcaisys</span>
+          <span className="font-[family-name:var(--font-orbital)]">ARCAISYS</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-[#71717a] font-medium">
