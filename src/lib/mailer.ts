@@ -7,6 +7,10 @@ type ContactPayload = {
   message: string;
 };
 
+type MailResult =
+  | { sent: true; skipped: false; reason?: undefined }
+  | { sent: false; skipped: true; reason: string };
+
 function parseRecipients(value: string | undefined): string[] {
   if (!value) return [];
   return value
@@ -15,7 +19,7 @@ function parseRecipients(value: string | undefined): string[] {
     .filter(Boolean);
 }
 
-export async function sendContactNotification(payload: ContactPayload) {
+export async function sendContactNotification(payload: ContactPayload): Promise<MailResult> {
   const host = process.env.SMTP_HOST;
   const port = Number(process.env.SMTP_PORT || "587");
   const user = process.env.SMTP_USER;
@@ -24,7 +28,11 @@ export async function sendContactNotification(payload: ContactPayload) {
   const from = process.env.CONTACT_NOTIFY_FROM || user;
 
   if (!host || !user || !pass || recipients.length === 0 || !from) {
-    return { sent: false, skipped: true as const };
+    return {
+      sent: false,
+      skipped: true,
+      reason: "Missing one or more SMTP env vars (SMTP_HOST, SMTP_USER, SMTP_PASS, CONTACT_NOTIFY_TO, CONTACT_NOTIFY_FROM).",
+    };
   }
 
   const transporter = nodemailer.createTransport({
@@ -59,5 +67,5 @@ export async function sendContactNotification(payload: ContactPayload) {
     `,
   });
 
-  return { sent: true as const, skipped: false as const };
+  return { sent: true, skipped: false };
 }
