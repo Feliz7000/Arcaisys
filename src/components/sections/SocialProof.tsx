@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const companies = [
-  "CDAC", "DRDO", "Deepak Technic", "CDAC", "DRDO", "Deepak Technic"
+  "Deepak Technic", "Microlines", "SEARCH", "Deepak Technic", "Microlines", "SEARCH",
 ];
 
 export function SocialProof() {
@@ -15,7 +15,7 @@ export function SocialProof() {
       <div className="relative w-full flex overflow-hidden">
         {/* Left fade */}
         <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-        
+
         <motion.div
           className="flex whitespace-nowrap items-center gap-16 px-8"
           animate={{ x: ["0%", "-50%"] }}
@@ -36,7 +36,7 @@ export function SocialProof() {
             </div>
           ))}
         </motion.div>
-        
+
         {/* Right fade */}
         <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
       </div>

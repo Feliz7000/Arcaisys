@@ -67,7 +67,7 @@ export function BackgroundParticles() {
           value: 80,
         },
         opacity: {
-          value: 0.35,
+          value: 0.6,
         },
         shape: {
           type: "circle",
