@@ -6,7 +6,7 @@ export function StatsSection() {
   const highlights = [
     {
       title: "Multiple Domains",
-      description: "Solutions across defence, industry, and consumer applications",
+      description: "Solutions across healthcare, industry, and consumer applications",
     },
     {
       title: "AI + Hardware Focus",

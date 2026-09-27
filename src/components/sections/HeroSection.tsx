@@ -52,7 +52,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-sm sm:text-lg md:text-xl text-[#71717a] max-w-[92vw] sm:max-w-2xl mb-8 sm:mb-12 leading-relaxed px-1"
           >
-            ARCAISYS builds advanced hardware and software systems to solve complex challenges across defence, industry, and everyday life — turning ideas into scalable, real-world solutions.
+            ARCAISYS builds advanced hardware and software systems to solve complex challenges across industry and everyday life — turning ideas into scalable, real-world solutions.
           </motion.p>
 
           <motion.div

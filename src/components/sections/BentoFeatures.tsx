@@ -64,7 +64,7 @@ export function BentoFeatures() {
           transition={{ delay: 0.1 }}
           className="text-lg text-[#71717a] max-w-2xl mx-auto"
         >
-          We design intelligent systems that work across industries — from defence to smart cities, healthcare, and beyond.
+          We design intelligent systems that work across industries — from smart cities to healthcare, industry, and beyond.
         </motion.p>
       </div>
 

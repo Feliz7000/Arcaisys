@@ -34,10 +34,10 @@ const featureBreakdown = [
   },
   {
     title: "Multi-Domain Applications",
-    desc: "Our solutions are designed to work across industries including defence, healthcare, smart cities, industrial automation, and consumer technology.",
+    desc: "Our solutions are designed to work across industries including healthcare, smart cities, industrial automation, and consumer technology.",
     icon: Globe2,
     previewTitle: "Domain Deployment Matrix",
-    previewLines: ["Defence deployment active", "Industrial deployment active", "Consumer deployment active"],
+    previewLines: ["Healthcare deployment active", "Industrial deployment active", "Consumer deployment active"],
   }
 ];
 
