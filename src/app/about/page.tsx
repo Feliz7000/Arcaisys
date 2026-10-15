@@ -1,16 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Users, Heart, Target } from "lucide-react";
-
-const team = [
-  { name: "Alice Vanderbilt", role: "CEO & Co-founder", avatar: "https://ui-avatars.com/api/?name=Alice+Vanderbilt&background=random&color=fff" },
-  { name: "Dr. James Harkin", role: "Chief AI Officer", avatar: "https://ui-avatars.com/api/?name=James+Harkin&background=random&color=fff" },
-  { name: "Sam Chen", role: "VP of Engineering", avatar: "https://ui-avatars.com/api/?name=Sam+Chen&background=random&color=fff" },
-  { name: "Maya Patel", role: "Head of Product", avatar: "https://ui-avatars.com/api/?name=Maya+Patel&background=random&color=fff" },
-];
 
 export default function About() {
   return (
