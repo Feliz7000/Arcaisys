@@ -1,61 +1,44 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Orbitron } from "next/font/google";
+import { Inter, JetBrains_Mono, Sora } from "next/font/google";
+import { MotionProvider } from "@/components/layout/MotionProvider";
 import "./globals.css";
-import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
-import { GlobalCursor } from "@/components/ui/GlobalCursor";
-import { SiteHeader } from "@/components/ui/SiteHeader";
+import { Backdrop } from "@/components/layout/Backdrop";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CustomCursor } from "@/components/ui/CustomCursor";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
-
-const orbitron = Orbitron({
-  variable: "--font-orbital",
-  subsets: ["latin"],
-});
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const sora = Sora({ variable: "--font-sora", subsets: ["latin"] });
+const mono = JetBrains_Mono({ variable: "--font-mono-face", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Arcaisys | AI-Powered Workflow Automation",
-  description: "Automate Everything. Scale Infinitely. Arcaisys uses cutting-edge AI to eliminate repetitive workflows.",
+  title: {
+    default: "Arcaisys — AI-powered software for the real world",
+    template: "%s · Arcaisys",
+  },
+  description:
+    "Arcaisys is an AI-powered software company building RestoQR, PACS, Hospio and Meridian — intelligent products for hospitality, healthcare and engineering teams.",
+  openGraph: {
+    title: "Arcaisys — AI-powered software for the real world",
+    description: "Intelligent products for hospitality, healthcare and engineering teams.",
+    images: ["/brand/arcaisys-logo.png"],
+    type: "website",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable} ${orbitron.variable} h-full antialiased dark`} style={{ colorScheme: "dark" }}>
-      <body suppressHydrationWarning className="min-h-full flex flex-col font-sans noise-bg">
-        <GlobalCursor />
-        <BackgroundParticles />
-        <SiteHeader />
-
-        <main className="flex-grow pt-16 flex flex-col relative z-10">
-          {children}
-        </main>
-
-        <footer className="border-t border-[rgba(255,255,255,0.06)] py-12 px-6 mt-20 relative z-10 bg-[#0a0a0a]">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#FF6B00]/50 to-transparent"></div>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#71717a]">
-            <div className="flex items-center gap-2">
-              <div className="font-bold text-white">Arcaisys</div>
-              <span>— © 2025 All rights reserved.</span>
-            </div>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              {/* <a href="#" className="hover:text-white transition-colors">Product</a> */}
-              <a href="#" className="hover:text-white transition-colors">Company</a>
-              {/* <a href="#" className="hover:text-white transition-colors">Legal</a> */}
-              {/* <a href="#" className="hover:text-white transition-colors">Social</a> */}
-            </div>
-          </div>
-        </footer>
+    <html lang="en" className={`${inter.variable} ${sora.variable} ${mono.variable} antialiased`}>
+      <body className="flex min-h-dvh flex-col font-sans">
+        <MotionProvider>
+          <Backdrop />
+          <ScrollProgress />
+          <CustomCursor />
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </MotionProvider>
       </body>
     </html>
   );

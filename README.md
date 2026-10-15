@@ -1,54 +1,38 @@
 # Arcaisys Website
 
-This is a Next.js App Router project for the Arcaisys SaaS platform, featuring a dark, futuristic aesthetic built with Tailwind CSS v4 and Framer Motion.
+Marketing site for Arcaisys, an AI-powered software company. It's built with Next.js 16 (App Router), Tailwind CSS v4 and Framer Motion, with a light, glassy theme based on the logo palette.
 
-## Getting Started
-
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-## Design Highlights
-- **Tailwind CSS v4 CSS-first config** for themes and global constants.
-- **Glassmorphism UI** using `backdrop-filter`.
-- **Framer Motion Animations**: Scroll-based intersection observation, micro-interactions, layout transitions.
-- **tsParticles Background**: Performs lightweight `<canvas>` particle rendering in the hero section.
+- `src/lib/products.ts`: **the one place to edit product content** (RestoQR, PACS, Hospio, Meridian). It drives the home page grid, the footer, the contact form chips and the `/products/[slug]` pages. To add a product, add an entry here.
+- `src/app/globals.css`: brand tokens (`amber`, `orange`, `flame`, `red`, `crimson`, `coral`) plus the `.glass` and `.glass-strong` surfaces.
+- `src/components/sections/`: home page sections (Hero, Products, Capabilities, Approach, Company, Contact).
+- `src/components/layout/`: header, footer, logo and ambient backdrop.
+- `public/brand/`: transparent logo assets.
 
-## Deployment on Vercel
+## Contact form
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
+`POST /api/contact` stores each message in Supabase (`contact_messages` table) and emails it via SMTP. Either channel is enough. If neither is configured, the request fails. Copy `.env.example` to `.env.local` and fill it in. Use the same variables as in Vercel.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fpackages%2Fcreate-next-app)
+## Product logos
 
-Ensure the `vercel.json` file is pushed so standard security headers and routing options are applied.
+The PACS, Hospio and Meridian logos are generated from code in `scripts/make-logos.mjs`. That file defines the marks, taglines and colours.
 
-## Contact Email Automation
+```bash
+npm run logos
+```
 
-The contact form saves submissions to Supabase and can also send email notifications.
+This command does two things:
 
-Set these environment variables in `web/.env.local` (and in Vercel project env vars):
+- It writes SVGs to `public/brand/`. These are the files the site uses: the mark, app icon, stacked logo and horizontal logo.
+- It exports high-resolution PNGs to `logos/`, for use outside the website. This step needs Google Chrome installed. If Chrome is missing, the command skips this step and the SVGs are still written.
 
-- `SMTP_HOST` - SMTP server host (for Hostinger mail this is commonly `smtp.hostinger.com`)
-- `SMTP_PORT` - SMTP port (typically `587` or `465`)
-- `SMTP_USER` - SMTP username
-- `SMTP_PASS` - SMTP password
-- `CONTACT_NOTIFY_FROM` - sender address (optional, defaults to `SMTP_USER`)
-- `CONTACT_NOTIFY_TO` - comma-separated recipients, e.g. `a@domain.com,b@domain.com`
-
-If SMTP variables are missing, contact submissions are still stored in Supabase and email notifications are skipped.
-
-## Architecture & Code Structure
-- `/app` - Pages and Routing logic (App Router)
-- `/components/ui` - Primitive components (Button, Badge, Card)
-- `/components/sections` - Distinct page sections broken down for main readability
-- `/lib` - Helper utilities like `cn` class merger
+The Arcaisys and RestoQR logos are the original artwork, not generated.

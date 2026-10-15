@@ -48,7 +48,7 @@ export default function Pricing() {
             onClick={() => setAnnual(!annual)}
           >
             <motion.div 
-              className="w-4 h-4 bg-[#7c3aed] rounded-full"
+              className="w-4 h-4 bg-[#FF6B00] rounded-full"
               animate={{ x: annual ? 24 : 0 }}
             />
           </button>

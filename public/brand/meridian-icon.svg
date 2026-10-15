@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Meridian"><title>Meridian</title><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFA41B"/><stop offset="1" stop-color="#E01422"/></linearGradient><linearGradient id="wm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFA41B"/><stop offset="1" stop-color="#E01422"/></linearGradient></defs><rect width="512" height="512" rx="112" fill="#fff"/><g transform="translate(86 86) scale(1.7)">
+      <circle cx="100" cy="100" r="78" fill="none" stroke="#0E1B2E" stroke-width="13"/>
+      <ellipse cx="100" cy="100" rx="32" ry="78" fill="none" stroke="#0E1B2E" stroke-width="6" opacity="0.28"/>
+      <path d="M22 100 H178" stroke="#0E1B2E" stroke-width="6" opacity="0.28"/>
+      <path d="M152 48 L113 113 L87 87 Z" fill="url(#g)"/>
+      <path d="M48 152 L87 87 L113 113 Z" fill="#0E1B2E"/>
+      <circle cx="100" cy="100" r="9" fill="#fff" stroke="#0E1B2E" stroke-width="4"/></g></svg>

@@ -19,6 +19,10 @@ function parseRecipients(value: string | undefined): string[] {
     .filter(Boolean);
 }
 
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+}
+
 export async function sendContactNotification(payload: ContactPayload): Promise<MailResult> {
   const host = process.env.SMTP_HOST;
   const port = Number(process.env.SMTP_PORT || "587");
@@ -59,11 +63,11 @@ export async function sendContactNotification(payload: ContactPayload): Promise<
     ].join("\n"),
     html: `
       <h2>New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${payload.name}</p>
-      <p><strong>Email:</strong> ${payload.email}</p>
-      <p><strong>Company:</strong> ${payload.company || "N/A"}</p>
+      <p><strong>Name:</strong> ${escapeHtml(payload.name)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
+      <p><strong>Company:</strong> ${escapeHtml(payload.company || "N/A")}</p>
       <p><strong>Message:</strong></p>
-      <p>${payload.message.replace(/\n/g, "<br />")}</p>
+      <p>${escapeHtml(payload.message).replace(/\n/g, "<br />")}</p>
     `,
   });
 

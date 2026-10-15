@@ -1,25 +1,29 @@
-import { HeroSection } from "@/components/sections/HeroSection";
-import { SocialProof } from "@/components/sections/SocialProof";
-import { BentoFeatures } from "@/components/sections/BentoFeatures";
-import { HowItWorks } from "@/components/sections/HowItWorks";
-import { StatsSection } from "@/components/sections/StatsSection";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { IntelligenceGrid } from "@/components/sections/IntelligenceGrid";
-import { CTABanner } from "@/components/sections/CTABanner";
-import { ContactSection } from "@/components/sections/ContactSection";
+import { Hero } from "@/components/sections/Hero";
+import { IndustryMarquee } from "@/components/sections/IndustryMarquee";
+import { Statement } from "@/components/sections/Statement";
+import { Products } from "@/components/sections/Products";
+import { RestoTour } from "@/components/sections/RestoTour";
+import { Industries } from "@/components/sections/Industries";
+import { Numbers } from "@/components/sections/Numbers";
+import { Capabilities } from "@/components/sections/Capabilities";
+import { Approach } from "@/components/sections/Approach";
+import { Company } from "@/components/sections/Company";
+import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <SocialProof />
-      <BentoFeatures />
-      <HowItWorks />
-      <IntelligenceGrid />
-      <StatsSection />
-      <Testimonials />
-      <CTABanner />
-      <ContactSection />
+      <Hero />
+      <IndustryMarquee />
+      <Statement />
+      <Products />
+      <RestoTour />
+      <Industries />
+      <Numbers />
+      <Capabilities />
+      <Approach />
+      <Company />
+      <Contact />
     </>
   );
 }

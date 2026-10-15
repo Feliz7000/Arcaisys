@@ -1,59 +1,63 @@
-import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
-import { sendContactNotification } from '@/lib/mailer';
+import { NextResponse } from "next/server";
+import { getSupabase } from "@/lib/supabase";
+import { sendContactNotification } from "@/lib/mailer";
 
-export const runtime = 'nodejs';
+export const runtime = "nodejs";
+
+const MAX = { name: 120, email: 200, company: 160, interest: 80, message: 5000 };
+
+function clean(value: unknown, max: number) {
+  return typeof value === "string" ? value.trim().slice(0, max) : "";
+}
 
 export async function POST(request: Request) {
+  let body: Record<string, unknown>;
   try {
-    const body = await request.json();
-    const { name, email, company, message } = body;
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
 
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: 'Name, email, and message are required.' },
-        { status: 400 }
-      );
-    }
+  const name = clean(body.name, MAX.name);
+  const email = clean(body.email, MAX.email);
+  const company = clean(body.company, MAX.company);
+  const interest = clean(body.interest, MAX.interest);
+  const rawMessage = clean(body.message, MAX.message);
 
-    // Insert into Supabase table "contact_messages"
-    const { data, error } = await supabase
-      .from('contact_messages')
-      .insert([
-        { name, email, company, message }
-      ]);
+  if (!name || !email || !rawMessage) {
+    return NextResponse.json({ error: "Name, email and message are required." }, { status: 400 });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+  }
 
-    if (error) {
-      console.error('Supabase error:', error);
-      return NextResponse.json(
-        { error: 'Failed to save message to database.' },
-        { status: 500 }
-      );
-    }
+  // The contact_messages table has no interest column, so it travels with the message.
+  const message = interest ? `[Interested in: ${interest}]\n\n${rawMessage}` : rawMessage;
+  const payload = { name, email, company, message };
 
-    let mailStatus: { sent: boolean; skipped?: boolean; reason?: string } = { sent: false, skipped: true, reason: 'Not attempted' };
-    try {
-      mailStatus = await sendContactNotification({ name, email, company, message });
-      if (mailStatus.skipped) {
-        console.warn('Mail notification skipped:', mailStatus.reason);
-      }
-    } catch (mailError) {
-      // Keep contact capture resilient even if SMTP is temporarily unavailable.
-      console.error('Mail notification error:', mailError);
-      mailStatus = {
-        sent: false,
-        skipped: false,
-        reason: mailError instanceof Error ? mailError.message : 'Unknown mail error',
-      };
-    }
+  let stored = false;
+  const supabase = getSupabase();
+  if (supabase) {
+    const { error } = await supabase.from("contact_messages").insert([payload]);
+    if (error) console.error("Supabase insert failed:", error);
+    else stored = true;
+  }
 
-    return NextResponse.json({ success: true, data, mailStatus }, { status: 200 });
+  let mailed = false;
+  try {
+    const result = await sendContactNotification(payload);
+    mailed = result.sent;
+    if (result.skipped) console.warn("Mail notification skipped:", result.reason);
+  } catch (err) {
+    console.error("Mail notification failed:", err);
+  }
 
-  } catch (error) {
-    console.error('Server error:', error);
+  // Succeed if the message landed somewhere a human will see it.
+  if (!stored && !mailed) {
     return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
+      { error: "We couldn't deliver your message right now. Please try again shortly." },
+      { status: 503 },
     );
   }
+  return NextResponse.json({ success: true, stored, mailed });
 }
